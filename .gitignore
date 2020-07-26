@@ -1,5 +1,6 @@
 /postgres-data/
 *.log[0-9]
 *.parquet
+/.idea/
 /.ipynb_checkpoints/
 /connections.txt
