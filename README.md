@@ -27,7 +27,7 @@ Also change the database connection details in this config file for your setup. 
 **EggplantETL.py** file from the project root directory as below:
 
 
-```python ./rdg-data-transformations/RdgDataTransformations.py```
+```python ./eggplant/ep-etl/ep_etl.py```
 
 ## Unit Testing
 Not implemented as of yet
