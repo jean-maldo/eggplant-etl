@@ -1,0 +1,19 @@
+2020-07-26 08:30:43,995 - ep-etl - INFO - Starting Data Transformations
+2020-07-26 08:30:43,996 - ep-etl.classes.config - DEBUG - Creating classes.config object
+2020-07-26 08:30:43,996 - ep-etl.classes.config - DEBUG - Reading config file at C:\Users\maldo\Development\eggplant\config\ep-etl.conf
+2020-07-26 08:30:43,997 - ep-etl.classes.config - DEBUG - database_uri = postgres+psycopg2://postgres:epetl123@localhost:5432/RealCustomerInsights
+2020-07-26 08:30:43,997 - ep-etl.classes.config - DEBUG - source_file = ../files/ep_user_data.parquet
+2020-07-26 08:30:43,997 - ep-etl.classes.config - DEBUG - transaction_size = 10000
+2020-07-26 08:30:43,998 - ep-etl.classes.parquet_reader - DEBUG - Creating classes.parquet_reader object
+2020-07-26 08:30:45,198 - ep-etl.classes.parquet_reader - DEBUG - Reading parquet file
+2020-07-26 08:30:45,227 - ep-etl.classes.parquet_reader - DEBUG - Converting to Pandas DataFrame
+2020-07-26 08:30:45,228 - ep-etl.classes.transformations - DEBUG - Creating classes.transformations object
+2020-07-26 08:30:45,228 - ep-etl.classes.transformations - INFO - Start Data Transformations
+2020-07-26 08:30:53,529 - ep-etl.classes.transformations - INFO - Finished Data Transformations
+2020-07-26 08:30:53,530 - ep-etl.classes.user_events_db_handler - DEBUG - Creating classes.user_events_db_handler object
+2020-07-26 08:30:53,686 - ep-etl.classes.user_events_db_handler - INFO - Begin Loading to Postgres
+2020-07-26 08:30:54,005 - ep-etl.classes.user_events_db_handler - INFO - Recreating Table in Postgres
+2020-07-26 08:31:05,952 - ep-etl.classes.user_events_db_handler - INFO - Loaded 10,000 rows to Postgres
+2020-07-26 08:31:16,792 - ep-etl.classes.user_events_db_handler - INFO - Loaded 10,000 rows to Postgres
+2020-07-26 08:31:27,398 - ep-etl.classes.user_events_db_handler - INFO - Loaded 10,000 rows to Postgres
+2020-07-26 08:31:29,098 - ep-etl.classes.user_events_db_handler - INFO - Loaded 1,418 rows to Postgres

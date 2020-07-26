@@ -1,0 +1,4 @@
+configparser==4.0.2
+pyscopg
+pyarrow==1.0.*
+sqlalchemy
