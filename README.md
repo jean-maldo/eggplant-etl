@@ -1,7 +1,7 @@
 # Eggplant ETL
 
 ## Overview
-The prupose of this project is to create an ETL solution that:
+The purpose of this project is to create an ETL solution that:
 - Read in records from a parquet file.
 - Writes them to a Postgres table.
 
