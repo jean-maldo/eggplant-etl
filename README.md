@@ -19,9 +19,7 @@ Optional for data profiling:
 ## Installation
 In order mitigate the risk of breaking your current python environment, It is recommended you create a virtual env with
  python 3.7 and then install the required libraries with:
-'''
-pip install -r requirements/req.txt
-'''
+```pip install -r requirements/req.txt```
 
 ## Usage
 Update the **config/eggplant.conf** file with the source file path that corresponds to your directory structure.
