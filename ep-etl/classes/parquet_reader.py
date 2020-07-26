@@ -23,10 +23,11 @@ class ParquetReader:
         :rtype DataFrame
         """
         try:
+            self.__logger.info("Reading Parquet File")
             table = pq.read_table(self.__config.source_file)
-            self.__logger.debug("Reading Parquet File")
-            df = table.to_pandas(timestamp_as_object=True)  # flag to parse dates as objects
             self.__logger.debug("Converting to Pandas DataFrame")
+            df = table.to_pandas(timestamp_as_object=True)  # flag to parse dates as objects
+            self.__logger.info("Finished reading file")
         except IOError as e:
             self.__logger.error("Error reading parquet file %s", e)
             raise

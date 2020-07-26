@@ -45,6 +45,6 @@ if __name__ == "__main__":
     for handler in logger.handlers:
         if isinstance(handler, RotatingFileHandler):
             handler.doRollover()
-    logger.info("Starting Data Transformations")
+    logger.info("Starting ETL")
     
     main(logger)
