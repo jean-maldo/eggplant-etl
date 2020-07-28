@@ -45,6 +45,7 @@ class Config(object):
                 self.transaction_size = int(config.get('DEFAULT', 'TRANSACTION_SIZE'))
             except ValueError:
                 self.__logger.error('Could not parse integer. Please ensure config value is an integer without commas.')
+            self.recreate_tables = config.getboolean('DEFAULT', 'RECREATE_TABLES', fallback=False)
 
         except IOError:
             self.__logger.debug('Could not open Config file')
@@ -73,3 +74,11 @@ class Config(object):
     @transaction_size.setter
     def transaction_size(self, var):
         self.__transaction_size = var
+
+    @property
+    def recreate_tables(self):
+        return self.__recreate_tables
+
+    @recreate_tables.setter
+    def recreate_tables(self, var):
+        self.__recreate_tables = var

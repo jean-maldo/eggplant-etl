@@ -32,6 +32,10 @@ def main(logger_obj):
 
     # Load
     ue_handler = UserEventsHandler(logger_obj.name, config)
+
+    if config.recreate_tables:
+        ue_handler.recreate_table()
+
     ue_handler.bulk_load(user_events)
 
     sys.exit(0)

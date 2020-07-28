@@ -3,7 +3,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from contextlib import contextmanager
 from classes.models import Base
-
+from sqlalchemy import exc
 
 class UserEventsHandler:
 
@@ -28,6 +28,9 @@ class UserEventsHandler:
         try:
             yield session
             session.commit()
+        except exc.IntegrityError as e:
+            self.__logger.error("Looks like a duplicate record. \n%s", e)
+
         except Exception as e:
             session.rollback()
             self.__logger.error("Database error %s", e)
@@ -53,7 +56,6 @@ class UserEventsHandler:
         """
         self.__logger.info("Begin Loading to Postgres")
 
-        self.recreate_table()
         self.transaction_insert(user_events)
 
     def transaction_insert(self, rows):
