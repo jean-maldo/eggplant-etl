@@ -22,10 +22,28 @@ In order mitigate the risk of breaking your current python environment, It is re
 ```pip install -r requirements/req.txt```
 
 ## Usage
-Update the **config/eggplant.conf** file with the source file path that corresponds to your directory structure.
-Also change the database connection details in this config file for your setup. Then simply run the python 
-**EggplantETL.py** file from the project root directory as below:
+There's a **config/eggplant.conf** file which needs to be updated. Here is a table of the variables and sample values:
 
+| Variable  | Description | Sample |
+| ------------- | ------------- | ------------- |
+| DATABASE_URI | The database connection string | postgres+psycopg2://postgres:pass@localhost:5432/db_name |
+| SOURCE_FILE  | The local storage path to the source Parquet file | /home/usr/files |
+| TRANSACTION_SIZE  | An integer with the number of SQL statements to include in a transaction  | 10000 |
+| RECREATE_TABLES  | Boolean value stating whether to recreate the database tables  | True |
+
+A Postgres Database can be quickly 
+set up with the following docker command. Make sure to change the password and path for local volume storage:
+```
+docker run -d ^
+	--name dev-postgres ^
+	-e POSTGRES_PASSWORD=password ^
+	-v /path/to/local/storage:/var/lib/postgresql/data ^
+        -p 5432:5432 ^
+        postgres
+```
+
+Once the config file has been updated, then you can simply run the python 
+**ep-etl.py** file from the project root directory as below:
 
 ```python ./eggplant/ep-etl/ep_etl.py```
 
