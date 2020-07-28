@@ -37,3 +37,12 @@ The standard Python logging library is used and is configurable via **config/log
 to INFO by default and the file logger is set to DEBUG. These logging levels can be modified in the **handler** section 
 of the config file. Log files are saved under the **logs** directory and the project is set up to rotate log files 
 sequentially, keeping a history of 5 log files in addition to the current run.
+
+## Results and Next Steps
+SQL Select statement and CSV output can be found in the Files directory.
+
+Next Steps:
+* Add workflow management e.g. Airflow
+* Database error handling
+* For larger file processing, look at streaming with Kafka and Spark.
+* Add unit testing
